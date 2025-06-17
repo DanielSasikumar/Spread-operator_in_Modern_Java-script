@@ -1,0 +1,66 @@
+// Spread Operator
+
+// uses of spread operators
+// 1. Argument passiing
+Number = [1, 5, 3]
+function sum(a, b, c){
+    return a + b + c
+}
+
+const sum1 = sum(...Number)
+console.log(sum1);
+// _________
+
+// 2. Array literals
+const Morning = ['idly', 'vada', 'sambar', 'water']
+const Afternoon = ['meals', 'poriyal', 'payasam', 'water']
+const Night = ['fruit salad', 'chapathi', 'fresh juice', 'water']
+
+// we need put the input inside the array or else it will print
+//  the input by words by words
+const issummer = true;
+// ['watermelon'] like this
+
+const oneday = [ ...Morning, ...issummer ? ['watermelon'] : '',  ...Afternoon, ...Night]
+console.log('One Day In My Life',oneday);
+// ______________
+
+// 3. Object Literal
+const car = {
+    brand: 'Volvo',
+    Model: 'XC90',
+}
+
+const carinfo = {
+    EngineNumber: 465498441,
+    CarColour: 'blue'
+}
+
+Object.assign(car, carinfo)
+console.log(car);
+
+// istead of doing this we can merge two constructor using spread operators 
+// the problem in this method is it will modify the  original arrya that we gived it 
+//  as a  input so thats a wrong way and method
+
+const car = {
+    brand: 'Volvo',
+    Model: 'XC90',
+}
+
+const carinfo = {
+    EngineNumber: 465498441,
+    CarColour: 'blue'
+}
+
+// const both = {...car, ...carinfo}
+console.log('Spread Operator', both); 
+
+// // if i want only the car i can give like this
+console.log('Spread Operator', car); 
+
+// we can also over write the values in the constructor like this
+const both = {...car, ...carinfo, CarColour: 'white'}
+console.log('Spread Operator', both ); 
+
+
